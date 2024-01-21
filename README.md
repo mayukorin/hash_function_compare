@@ -2,4 +2,5 @@
 
 ## 実行環境
 - Python
-- pyscrypt
+- pyscrypt module
+- bcrypt module
