@@ -1,4 +1,4 @@
 import hashlib
 
-def md5_hash(plain_text):
+def calc_md5_hash(plain_text):
     return hashlib.md5(plain_text.encode()).hexdigest()
