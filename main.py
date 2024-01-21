@@ -12,10 +12,10 @@ if __name__ == '__main__':
     sha256_hash, _ = calc_sha256_hash('password')
     print('sha256_hash:{}'.format(sha256_hash))
 
-    scrypt_hash, _ = calc_scrypt_hash('password')
+    scrypt_hash, _ = calc_scrypt_hash('password', cost_factor=8192)
     print('scrypt_hash:{}'.format(scrypt_hash))
 
-    bcrypt_hash, _ = calc_bcrypt_hash('password')
+    bcrypt_hash, _ = calc_bcrypt_hash('password', cost=12)
     print('bcrypt_hash:{}'.format(bcrypt_hash))
 
     # hash計算にかかる時間を測定
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     for password in common_passwords:
         md5_avg_time += calc_md5_hash(password)[1]
         sha256_avg_time += calc_sha256_hash(password)[1]
-        scrypt_avg_time += calc_scrypt_hash(password)[1]
-        bcrypt_avg_time += calc_bcrypt_hash(password)[1]
+        scrypt_avg_time += calc_scrypt_hash(password, cost_factor=8192)[1]
+        bcrypt_avg_time += calc_bcrypt_hash(password, cost=12)[1]
 
     print('md5 average time: {} s, sha256 average time: {} s, scrypt average time: {} s, bcrypt average time: {} s'.format(md5_avg_time/len(common_passwords), sha256_avg_time/len(common_passwords), scrypt_avg_time/len(common_passwords), bcrypt_avg_time/len(common_passwords)))
