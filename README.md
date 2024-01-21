@@ -6,6 +6,16 @@
 - bcrypt module
 
 ## 使い方
+### 各ハッシュ関数の出力値と平均実行時間を確かめたいとき
 ```
 hash_function_compare $ python main.py
+```
+### scryptのcostパラメータと実行時間の関係を確かめたいとき
+```
+hash_function_compare $ python scrypt_cost_param_evaluate.py
+```
+
+### bcryptのcostパラメータと実行時間の関係を確かめたいとき
+```
+hash_function_compare $ python bcrypt_cost_param_evaluate.py
 ```
