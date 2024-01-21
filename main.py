@@ -31,4 +31,4 @@ if __name__ == '__main__':
         scrypt_avg_time += calc_scrypt_hash(password)[1]
         bcrypt_avg_time += calc_bcrypt_hash(password)[1]
 
-    print('md5 average time: {}, sha256 average time: {}, scrypt average time: {}, bcrypt average time: {}'.format(md5_avg_time/len(common_passwords), sha256_avg_time/len(common_passwords), scrypt_avg_time/len(common_passwords), bcrypt_avg_time/len(common_passwords)))
+    print('md5 average time: {} s, sha256 average time: {} s, scrypt average time: {} s, bcrypt average time: {} s'.format(md5_avg_time/len(common_passwords), sha256_avg_time/len(common_passwords), scrypt_avg_time/len(common_passwords), bcrypt_avg_time/len(common_passwords)))
